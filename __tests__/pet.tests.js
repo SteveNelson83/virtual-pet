@@ -10,7 +10,13 @@ describe('constructor', () => {
     });
     it('has a initial age of 0', () => {
         const pet = new Pet('Fido');
-    
         expect(pet.age).toEqual(0);
-      });
+    });
+    it('pet gains hunger and loses fitness with age', () => {
+        const pet = new Pet('Bobby');
+        pet.growUp();
+        expect(pet.hunger).toEqual(5);
+        expect(pet.fitness).toEqual(7);
+
+    })
 });
