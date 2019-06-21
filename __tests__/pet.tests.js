@@ -31,4 +31,17 @@ describe('constructor', () => {
         pet.walk();
         expect(pet.fitness).toEqual(10);
     })
+    it('feed method reduces hunger by 3', () => {
+        const pet = new Pet();
+        pet.growUp();
+        pet.feed();
+        expect(pet.hunger).toEqual(2);
+    })
+    it('feed method doesnt allow hunger to drop below zero', () => {
+        const pet = new Pet();
+        pet.growUp();
+        pet.feed();
+        pet.feed();
+        expect(pet.hunger).toEqual(0);
+    })
 });
