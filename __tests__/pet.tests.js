@@ -44,4 +44,17 @@ describe('constructor', () => {
         pet.feed();
         expect(pet.hunger).toEqual(0);
     })
+    it('checkup method returns I need a walk if fitness is 3 or lower', () => {
+        const pet = new Pet();
+        pet.growUp();
+        pet.growUp();
+        pet.feed();
+        pet.growUp();
+        pet.feed();
+        expect(pet.checkup()).toEqual('I need a walk');
+    })
+    it('checkup method returns I feel great! if fit and not hungry', () => {
+        const pet = new Pet();
+        expect(pet.checkup()).toEqual('I feel great!');
+    })
 });
