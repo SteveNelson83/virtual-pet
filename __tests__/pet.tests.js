@@ -57,4 +57,8 @@ describe('constructor', () => {
         const pet = new Pet();
         expect(pet.checkup()).toEqual('I feel great!');
     })
+    it('isAlive getter returns true if pet is less than 30, fit and not hungry', () => {
+        const pet = new Pet();
+        expect(pet.isAlive).toBe(true);
+    })
 });
